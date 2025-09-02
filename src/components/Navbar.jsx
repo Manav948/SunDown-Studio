@@ -26,7 +26,7 @@ const Navbar = () => {
                         </span>
 
                         {/* Sliding background */}
-                        <span className="absolute left-0 bottom-0 w-full h-full bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out rounded-full"></span>
+                        <span className="absolute left-0 bottom-0 w-full h-full bg-white text-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out rounded-full"></span>
                     </a>
                 ))}
             </nav>

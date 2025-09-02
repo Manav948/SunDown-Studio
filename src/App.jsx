@@ -4,7 +4,11 @@ import InfiniteSlider from './components/Slider'
 import HoverProjects from './components/HoverProjects'
 import Slider from './components/imageSlider'
 import Footer from './components/Footer'
+import useLenis from './lenis'
+import useTextReveal from './useTextReveal'
 const App = () => {
+  useLenis()
+  useTextReveal()
   return (
     <div className='bg-[#EFEAE3] min-h-screen'>
       <Navbar />
