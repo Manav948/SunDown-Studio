@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import InfiniteSlider from './components/Slider'
+import HoverProjects from './components/HoverProjects'
 const App = () => {
   return (
     <div className='bg-[#EFEAE3] min-h-screen'>
@@ -32,7 +33,7 @@ const App = () => {
       <InfiniteSlider />
 
       <div className='w-full h-screen mt-40 flex items-center justify-between'>
-        <div className='pl-10 text-6xl font-semibold'>
+        <div className='pl-10 text-6xl font-bold'>
           <span>We are a group of design-</span><br />
           <span>driven, goal-focused creators,</span><br />
           <span>producers, and designers who</span><br />
@@ -46,11 +47,14 @@ const App = () => {
             className='w-[70%] h-[70%] rounded-xl'
             alt="Design team"
           />
-          <p className='absolute top-64 pr-10  text-center p-4 rounded-lg'>
+          <p className='absolute top-64 pr-10 text-center p-4 rounded-lg'>
             We love to create, we love to solve, we love to collaborate, and we love to turn amazing ideas into reality. We’re here to partner with you through every step of the process and know that relationships are the most important things we build.
           </p>
         </div>
       </div>
+
+      {/* section 3  */}
+     <HoverProjects />
     </div>
   )
 }
