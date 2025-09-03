@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 import Navbar from './components/Navbar'
 import InfiniteSlider from './components/Slider'
 import HoverProjects from './components/HoverProjects'
@@ -6,12 +8,46 @@ import Slider from './components/imageSlider'
 import Footer from './components/Footer'
 import useLenis from './lenis'
 import useTextReveal from './useTextReveal'
+
+const VideoSection = () => {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1.2])
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ["2rem", "4rem"])
+  const width = useTransform(scrollYProgress, [0, 1], ["70%", "80%"])
+  const height = useTransform(scrollYProgress, [0, 1], ["90%", "100%"])
+
+  return (
+    <div ref={ref} className="w-full h-screen flex items-center justify-center mt-20">
+      <motion.video
+        style={{
+          scale,
+          borderRadius,
+          width,
+          height,
+        }}
+        autoPlay
+        muted
+        loop
+        className="object-cover shadow-lg"
+        src="https://sundown-ivory.vercel.app/video.mp4"
+      />
+    </div>
+  )
+}
+
 const App = () => {
   useLenis()
   useTextReveal()
+
   return (
     <div className='bg-[#EFEAE3] min-h-screen'>
       <Navbar />
+
       {/* section 1 */}
       <div className='flex items-center justify-between mt-44 pl-10'>
         <div className='font-bold text-3xl space-y-2'>
@@ -28,14 +64,10 @@ const App = () => {
       </div>
       <hr className='border-t border-gray-500 mt-3' />
 
-      {/* video section */}
-      <div className='w-full h-screen mt-20'>
-        <video autoPlay muted loop src="https://sundown-ivory.vercel.app/video.mp4"
-          className='w-[95%] h-[95%] object-contain pl-20 ' />
-      </div>
+      {/* video section with scroll effect */}
+      <VideoSection />
 
       {/* slider */}
-
       <InfiniteSlider />
 
       <div className='w-full h-screen mt-10 flex items-center justify-between'>
@@ -59,7 +91,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* section 3  */}
+      {/* section 3 */}
       <HoverProjects />
 
       <div className="w-full bg-white px-6 md:px-12 py-10 mt-7">
@@ -75,6 +107,7 @@ const App = () => {
           ]}
         />
       </div>
+
       <div className="w-full h-screen flex flex-col md:flex-row justify-between gap-16 px-10 md:px-40 py-10 mt-20">
         {/* Left Column */}
         <div className="flex flex-col gap-10 max-w-lg">
@@ -135,7 +168,8 @@ const App = () => {
           </div>
         </div>
       </div>
-          <Footer />
+
+      <Footer />
     </div>
   )
 }

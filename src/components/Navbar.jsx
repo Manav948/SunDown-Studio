@@ -21,12 +21,12 @@ const Navbar = () => {
                         className="relative px-6 py-2 border border-black rounded-full overflow-hidden group"
                     >
                         {/* Text */}
-                        <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                        <span className="relative z-10 transition-colors duration-300 group-hover:text-black ">
                             {item}
                         </span>
 
                         {/* Sliding background */}
-                        <span className="absolute left-0 bottom-0 w-full h-full bg-white text-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out rounded-full"></span>
+                        <span className="absolute left-0 bottom-0 w-full h-full bg-[#EFEAE3] text-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out rounded-full"></span>
                     </a>
                 ))}
             </nav>
