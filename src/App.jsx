@@ -62,7 +62,6 @@ const App = () => {
           <span>INSPIRE</span>
         </div>
       </div>
-      <hr className='border-t border-gray-500 mt-6' />
 
       {/* video section with scroll effect */}
       <VideoSection />
