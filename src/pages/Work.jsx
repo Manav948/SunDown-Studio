@@ -65,7 +65,16 @@ const Work = () => {
           </motion.div>
         ))}
       </div>
-      <Footer />
+       <section className="mt-20 max-w-5xl mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-black text-center">
+          Innovation at Every Step
+        </h2>
+        <p className="mt-4 text-gray-700 text-center leading-relaxed">
+          From concept to execution, we explore modern tools, technologies, and
+          trends. Whether it’s interactive web, immersive environments, or
+          product design—we aim to push boundaries without losing clarity.
+        </p>
+      </section>
     </div>
   )
 }
