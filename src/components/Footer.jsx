@@ -7,13 +7,13 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between px-10 md:px-20 py-16">
         {/* Left Links */}
         <div className="flex flex-col gap-4 text-lg font-semibold">
-          <a href="#work" className="hover:opacity-70">
+          <a href="/work" className="hover:opacity-70">
             Work
           </a>
-          <a href="#studio" className="hover:opacity-70">
+          <a href="/studio" className="hover:opacity-70">
             Studio
           </a>
-          <a href="#contact" className="hover:opacity-70">
+          <a href="/contact" className="hover:opacity-70">
             Contact
           </a>
         </div>
