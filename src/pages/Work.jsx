@@ -1,9 +1,44 @@
-import React from "react"
-import { motion } from "framer-motion"
+import React, { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import Footer from "../components/Footer"
+import useLenis from "../lenis"
+import useTextReveal from "../useTextReveal"
 const Work = () => {
+  useLenis()
+  useTextReveal()
+
+  const VideoSection = () => {
+    const ref = useRef(null)
+    const { scrollYProgress } = useScroll({
+      target: ref,
+      offset: ["start end", "end start"],
+    })
+
+    const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1.2])
+    const borderRadius = useTransform(scrollYProgress, [0, 1], ["1rem", "2rem"])
+    const width = useTransform(scrollYProgress, [0, 1], ["90%", "80%"])
+    const height = useTransform(scrollYProgress, [0, 1], ["60%", "100%"])
+
+    return (
+      <div ref={ref} className="w-full h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+        <motion.video
+          style={{
+            scale,
+            borderRadius,
+            width,
+            height,
+          }}
+          autoPlay
+          muted
+          loop
+          className="object-cover shadow-lg"
+          src="./video-sundown.mp4"
+        />
+      </div>
+    )
+  }
   return (
-    <div className="bg-[#EFEAE3] min-h-screen mt-20 flex flex-col items-center justify-center">
+    <div className="bg-[#EFEAE3] min-h-screen mt-20 flex flex-col items-center justify-center overflow-hidden">
       {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
@@ -18,7 +53,7 @@ const Work = () => {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 1.8 }}
+        transition={{ duration: 1.8 }}
         className="mt-20 text-lg md:text-xl text-gray-700 max-w-2xl text-center"
       >
         We craft experiences that blend design, technology, and storytelling.
@@ -49,7 +84,7 @@ const Work = () => {
             key={i}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: i * 0.2 }}
+            transition={{ duration: 1.2 }}
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
           >
@@ -112,18 +147,60 @@ const Work = () => {
       </section>
 
       {/* video section  */}
-      <div className="flex justify-center items-center w-full h-screen bg-black">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-[80%] h-[80%] object-cover rounded-2xl shadow-lg"
-        >
-          <source src="./video-sundown.mp4" type="video/mp4" />
-        </video>
+      <div className="w-full h-full bg-black">
+        <VideoSection />
       </div>
+
+      {/* section */}
+
+      <div className="w-full min-h-screen text-black flex justify-center items-center text-[105px] md:text-[350px] space-x-3">
+        <span>A</span>
+        <span>w</span>
+        <span>a</span>
+        <span>r</span>
+        <span>d</span>
+        <span>s</span>
+      </div>
+
+      <section className="w-full max-w-6xl mx-auto px-6 md:px-16 mb-40">
+        <h2 className="text-4xl font-bold text-center mb-16">Awards & Recognition</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {[
+            {
+              year: "2023",
+              title: "Best Creative Agency",
+              desc: "Honored for delivering outstanding branding and digital experiences.",
+            },
+            {
+              year: "2022",
+              title: "UI/UX Excellence Award",
+              desc: "Recognized for innovation in crafting user-centered digital products.",
+            },
+            {
+              year: "2021",
+              title: "Design Impact Award",
+              desc: "Awarded for projects that blend creativity with long-lasting impact.",
+            },
+          ].map((award, i) => (
+            <motion.div
+              key={i}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: i * 0.2 }}
+              viewport={{ once: true }}
+              className="rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300"
+            >
+              <h3 className="text-xl font-bold text-black">{award.title}</h3>
+              <p className="text-orange-600 font-semibold mt-2">{award.year}</p>
+              <p className="text-gray-700 mt-4 leading-relaxed">{award.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      {/* Footer */}
+      <Footer />
     </div>
+
   )
 }
 

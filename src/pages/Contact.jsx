@@ -1,7 +1,11 @@
-import React from "react"
+import React, { use } from "react"
 import Footer from "../components/Footer"
+import useLenis from "../lenis"
+import useTextReveal from "../useTextReveal"
 // 123 Creative Street, New York, USA
 const Contact = () => {
+    useLenis()
+    useTextReveal()
     return (
         <div className="bg-[#EFEAE3] min-h-screen flex flex-col items-center justify-center">
             {/* Heading */}
