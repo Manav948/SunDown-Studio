@@ -1,12 +1,36 @@
-# React + Vite
+# 🌅 Sundown Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated **portfolio/studio showcase website** built with **React, Tailwind CSS, and Framer Motion**.  
+This project is inspired by the **Sundown Studio** website and reimagined with smooth scroll animations, text reveals, and interactive sections.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🎨 **Modern UI/UX** with clean design  
+- ⚡ Built using **React + Vite** for fast development  
+- ✨ **Animations & Smooth Scroll** with **Framer Motion + Lenis**  
+- 📱 Fully **Responsive** across devices  
+- 🎥 Video showcase with parallax effects  
+- 🖼️ Project/Work showcase grid  
+- 👩‍💻 Team section with profiles  
+- 🏆 Awards / About / CTA sections  
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Tech Stack
+- **React + Vite** – Frontend framework & build tool  
+- **Tailwind CSS** – Styling  
+- **Framer Motion** – Animations  
+- **Lenis** – Smooth scrolling  
+---
+## 📸 Preview
+(Add screenshots / demo GIF here if you want)  
+---
+## ⚡ Getting Started
+1. Clone this repository: git clone https://github.com/yourusername/sundown-studio.git
+2. Navigate to the project:: cd sundown-studio
+3. Install dependencies:: npm i or npm install
+4. Start development server:npm run dev
+
+
+--------------------------------------Made with ❤️ by Manav Valani-----------------------------------------
