@@ -16,6 +16,12 @@ const Footer = () => {
           <a href="/contact" className="hover:opacity-70">
             Contact
           </a>
+          <a href="https://www.instagram.com/" className="hover:text-white">
+            Instagram
+          </a>
+          <a href="https://www.linkedin.com/" className="hover:text-white">
+            LinkedIn
+          </a>
         </div>
 
         {/* Newsletter */}
@@ -45,10 +51,10 @@ const Footer = () => {
         <p>Copyright © Sundown Studio</p>
         <p>Brooklyn, NY</p>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-white">
+          <a href="https://www.instagram.com/" className="hover:text-white">
             Instagram
           </a>
-          <a href="#" className="hover:text-white">
+          <a href="www.linkedin.com" className="hover:text-white">
             LinkedIn
           </a>
         </div>
