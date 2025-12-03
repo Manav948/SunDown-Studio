@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import Navbar from '../components/Navbar'
 import InfiniteSlider from '../components/Slider'
 import HoverProjects from '../components/HoverProjects'
-import Slider from '../components/imageSlider'
+import Slider from '../components/ImageSlider'
 import Footer from '../components/Footer'
 import useLenis from '../lenis'
 import useTextReveal from '../useTextReveal'
